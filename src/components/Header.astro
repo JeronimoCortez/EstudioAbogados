@@ -1,0 +1,50 @@
+---
+import { Menu, X } from "lucide-astro";
+---
+
+<header class="h-[60px] w-full bg-[#000] text-white">
+  <div class="max-w-[1040px] flex justify-between p-5 items-center mx-auto">
+    <div>
+      <!-- LOGO -->
+      LOGO
+    </div>
+    <Menu id="menuBtn" class="md:hidden" />
+
+    <nav class="hidden md:block">
+      <ul class="md:flex gap-4">
+        <li class="hover:underline"><a href="">Inicio</a></li>
+        <li class="hover:underline"><a href="">Contacto</a></li>
+        <li class="hover:underline"><a href="">Nosotros</a></li>
+      </ul>
+    </nav>
+
+    <!-- MENU MOBILE -->
+    <nav
+      class="hidden fixed top-0 left-0 w-full h-full bg-[#000] flex flex-col justify-center items-center"
+      id="mobileNav"
+    >
+      <X class="absolute right-0 top-0 m-4" id="closeBtn" />
+      <ul class="text-lg">
+        <li><a href="">INICIO</a></li>
+        <li><a href="">CONTACTO</a></li>
+        <li><a href="">NOSOTROS</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("menuBtn");
+  const mobileNav = document.getElementById("mobileNav");
+  const closeBtn = document.getElementById("closeBtn");
+
+  btn?.addEventListener("click", () => {
+    mobileNav?.classList.toggle("hidden");
+    mobileNav?.classList.toggle("block");
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    mobileNav?.classList.toggle("hidden");
+    mobileNav?.classList.toggle("block");
+  });
+</script>
